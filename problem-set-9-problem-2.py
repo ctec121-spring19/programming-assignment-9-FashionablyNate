@@ -30,14 +30,17 @@ HINTS
 
 IPO
 ==========
-INPUTS: 
-PROCESSES: 
-OUTPUTS: 
+INPUTS: a sentence provided from the user
+PROCESSES: adds the first letter of every word to the end of that word, then adds 'ay'
+OUTPUTS: the pig latin translation of input sentence
 
 """
 
 def main():
-    pass # remove this line
     # your code goes here
+    sentence = input("Enter a sentence you'd like translated: ")
+    for i in sentence.split(" "):
+        pig = i[1:] + i[0] + "ay"  
+        print(pig, end=" ")
 
 main()

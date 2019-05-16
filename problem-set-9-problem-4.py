@@ -42,14 +42,33 @@ morse_list = [' ', '--..--', '.-.-.-', '-----','.----', '..---', '...--',
                 '-.--', '--..']
 IPO
 ==========
-INPUTS: 
-PROCESSES: 
-OUTPUTS: 
+INPUTS: asks user for a string
+PROCESSES: converts string to morse code
+OUTPUTS: prints morse code translation
 
 """
 
 def main():
-    pass # remove this line
     # your code goes here
-
+                #     ,         .         0       1        2        3
+    morse_list = [' ', '--..--', '.-.-.-', '-----','.----', '..---', '...--',
+                #4        5        6        7        8        9
+                '....-', '.....', '-....', '--...', '---..', '----.',
+                #A     B       C       D      E    F       G      H   
+                '.-', '-...', '-.-.', '-..', '.', '..-.', '--.', '....',
+                #I     J       K      L       M     N     O      P
+                '..', '.---', '-.-', '.-..', '--', '-.', '---', '.--.',
+                #Q       R      S      T    U      V       W      X
+                '--.-', '.-.', '...', '-', '..-', '...-', '.--', '-..-',
+                #Y       Z
+                '-.--', '--..']
+    character_dict = {' ':'0',',':'1','.':'2','0':'3','1':'4','2':'5','3':'6','4':'7','5':'8','6':'9','7':'10','8':'11','9':'12',
+                    'A':'13','B':'14','C':'15','D':'16','E':'17','F':'18','G':'19','H':'20','I':'21','J':'22','K':'23','L':'24','M':'25',
+                    'N':'26','O':'27','P':'28','Q':'29','R':'30','S':'31','T':'32','U':'33','V':'34','W':'35','X':'36','Y':'37','Z':'38'}
+    sentence = list(input("Enter a phrase: "))
+    for i in range(0, len(sentence)):
+        char = sentence[i]
+        charNum = character_dict[char.upper()]
+        morseChar = morse_list[int(charNum)]
+        print(morseChar, sep = "", end = "")
 main()

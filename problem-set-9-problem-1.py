@@ -14,14 +14,19 @@ each letter with no spaces.
 
 IPO
 ==========
-INPUTS: 
-PROCESSES: 
-OUTPUTS: 
+INPUTS: a string containing the persons first, middle, and last name
+PROCESSES: gets the first letter of every word in string
+OUTPUTS: outputs initials with '.'s in between
 
 """
 
 def main():
-    pass # remove this line
     # your code goes here
+    name = input("What's your full name? ")
+    initials = ""
+    for word in name.split():
+        initials = initials + word[0] + "."
+    initials = initials.upper()
+    print(initials)
 
 main()
